@@ -1,0 +1,7 @@
+#cut{
+  width: 2px;
+  height: 100%;
+  position: absolute;
+  margin-left: 300px;
+  background-color: rgb(0, 0, 0);
+}
