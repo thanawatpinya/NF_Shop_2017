@@ -6,7 +6,7 @@ class Home extends Component {
     return (
       <div>
         <div id="cut">
-          test Font Branch
+          test Font Branch 2222
         </div>
       </div>
     );
