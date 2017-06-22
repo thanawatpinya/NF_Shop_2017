@@ -6,6 +6,7 @@ class Home extends Component {
     return (
       <div>
         <div id="cut">
+          
         </div>
       </div>
     );
