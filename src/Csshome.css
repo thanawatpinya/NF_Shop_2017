@@ -1,7 +1,64 @@
+body{
+  display: flex;
+}
 #cut{
   width: 300px;
-  height: 100%;
-  position: absolute;
-  background-color: rgb(109, 202, 232);
-  
+  height: 100vh;
+  background-color: rgb(24, 53, 68);
+}
+.flex-container{
+  display: flex;
+  justify-content: center;
+  background-color: rgb(241,241,241);
+}
+
+.flex-wrap{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex: 1;
+  height: 100vh;
+  overflow-y: scroll;
+}
+.flex-item{
+  /*background: rgb(229,239,139);*/
+  padding: 10px;
+  height: 300px;
+  margin: 5px;
+  flex-basis: 325px;
+  /*border: 1px solid;*/
+  border-color: rgb(215, 213, 211);
+  border-radius: 1em;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.flex-item:hover{
+  background: rgb(205,214,218);
+  box-shadow: 0 10px 10px 0 rgba(0,0,0,0.24),0 10px 50px 0 rgba(0,0,0,0.19);
+}
+.flex-img{
+  background: white;
+  height: 200px;
+  flex-basis: 325px;
+  border-radius: 1em;
+}
+.but-cart{
+  color: white;
+  height: 40px;
+  width: 125px;
+  float: right;
+  margin-top: 20px;
+  background: rgb();
+  border: rgb(247, 247, 167);
+}
+.but-cart:hover{
+  background: rgb(243,111,54);
+}
+
+@media (max-width:767px) {
+  .flex-item {
+    flex-basis: 500px;
+  }
 }
