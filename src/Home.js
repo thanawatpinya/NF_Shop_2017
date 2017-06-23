@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './Csshome.css'
-
+import { Glyphicon, Button } from 'react-bootstrap';
 class Home extends Component {
   render() {
     return (
@@ -17,26 +17,6 @@ class Home extends Component {
                 <label>Amount</label>
                 <label>Price</label>
               </div>
-              <div id="in-cartlist">
-                <label id="name-item">Iphone 7</label>
-                <label>1</label>
-                <label>1700฿</label>
-              </div>
-              <div id="in-cartlist">
-                <label id="name-item">Iphone 7</label>
-                <label>1</label>
-                <label>1700฿</label>
-              </div>
-              <div id="in-cartlist">
-                <label id="name-item">Iphone 7</label>
-                <label>1</label>
-                <label>1700฿</label>
-              </div>
-              <div id="in-cartlist">
-                <label id="name-item">Iphone 7</label>
-                <label>1</label>
-                <label>1700฿</label>
-              </div>
             </div>
           </div>
           <div className="checkoutset">
@@ -50,30 +30,35 @@ class Home extends Component {
         </div>
         <div className="flex-wrap">
           <div className="flex-item">
-            test
+            <div className="flex-img">
+              img
+            </div>
+            <div>
+              product content
+            </div>
+            <div className="align-butt">
+              <button className="but-cart" value="Purchase">
+                <Glyphicon glyph="shopping-cart" />
+                Add to Cart
+              </button>
+            </div>
           </div>
           <div className="flex-item">
-            test
-          </div>
-          <div className="flex-item">
-            test
-          </div>
-          <div className="flex-item">
-            test
-          </div>
-          <div className="flex-item">
-            test
-          </div>
-          <div className="flex-item">
-            test
-          </div>
-          <div className="flex-item">
-            test
-          </div>
-          <div className="flex-item">
-            test
+            <div className="flex-img">
+              img
+            </div>
+            <div>
+              product content
+            </div>
+            <div className="align-butt">
+              <button className="btn but-cart" value="Purchase">
+                <Glyphicon glyph="shopping-cart" />
+                Add to Cart
+              </button>
+            </div>
           </div>
         </div>
+
       </div>
     );
   }
