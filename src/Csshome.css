@@ -85,13 +85,15 @@ body{
 }
 
 .flex-wrap{
-  display: -ms-flexbox;
+  /*display: -ms-flexbox;*/
   display: flex;
-  -ms-flex-pack: center;
-  justify-content: center;
+  /*-ms-flex-pack: center;*/
+  /*justify-content: center;*/
   flex-wrap: wrap;
   flex: 1;
+  width: 1065px;
   height: 100vh;
+  overflow-y:auto;
   overflow-y: scroll;
 }
 .flex-item{
@@ -99,6 +101,7 @@ body{
   padding: 10px;
   height: 300px;
   margin: 5px;
+  margin-left: 15px;
   flex-basis: 325px;
   /*border: 1px solid;*/
   border-color: rgb(215, 213, 211);
@@ -121,7 +124,7 @@ body{
   height: 40px;
   width: 125px;
   float: right;
-  margin-top: 20px;
+  margin-top: 5px;
   background: rgb();
   border: rgb(247, 247, 167);
 }
@@ -133,4 +136,10 @@ body{
   .flex-item {
     flex-basis: 500px;
   }
+}
+#content-name{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
 }
