@@ -115,7 +115,6 @@ body{
   box-shadow: 0 10px 10px 0 rgba(0,0,0,0.24),0 10px 50px 0 rgba(0,0,0,0.19);
 }
 .flex-img{
-  background: white;
   height: 200px;
   flex-basis: 325px;
   border-radius: 1em;
@@ -132,7 +131,10 @@ body{
 .but-cart:hover{
   background: rgb(243,111,54);
 }
-
+.setinput{
+  color: black;
+  width: 40px;
+}
 @media (max-width:767px) {
   .flex-item {
     flex-basis: 500px;
@@ -143,4 +145,8 @@ body{
   flex-direction: row;
   justify-content: space-between;
   margin-top: 10px;
+}
+img {
+    flex-basis: 325px;
+    border-radius: 1em;
 }

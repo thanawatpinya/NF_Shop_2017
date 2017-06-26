@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './Csshome.css'
+import img1 from './img/1.jpeg'
 import { Glyphicon, Button } from 'react-bootstrap';
 let countid = 0;
 
@@ -15,7 +16,8 @@ class Home extends Component {
       ],
       itemcart:[],
       counter: 0,
-      name: ""
+      name: "",
+      changecount:0
     }
   }
 
@@ -34,7 +36,9 @@ class Home extends Component {
         counter: this.state.counter += this.state.itemlist[e.target.value].price
       })
       index = 0
+      this.state.changecount
     }else {
+      console.log(this.state.itemcart);
       this.setState({
         itemcart: [
           ...this.state.itemcart, {
@@ -48,6 +52,21 @@ class Home extends Component {
       })
     }
   }
+  handleChangecount(e) {
+    if(this.state.itemcart.find(a => a.name == this.state.itemlist[e.target.id].name)){
+      for(let i = 0; i < this.state.itemcart.length; i++){
+        if(this.state.itemcart[i].name == this.state.itemlist[e.target.id].name){
+          var index = i
+          break;
+        }
+      }
+    console.log(this.state.itemcart);
+    itemcart: [...this.state.itemcart, ...this.state.itemcart[e.target.id].count = parseInt(e.target.value), ...this.state.itemcart[e.target.id].price = this.state.itemlist[index].price * this.state.itemcart[e.target.id].count]
+     this.setState({
+
+     })
+  }
+}
 
   render() {
     return (
@@ -67,7 +86,7 @@ class Home extends Component {
               {this.state.itemcart.map((record, index) =>
                   <div id="in-cartlist">
                     <label id="name-item">{record.name}</label>
-                    <label>{record.count}</label>
+                    <input className="setinput" id={index} type="number" value={record.count} onChange={this.handleChangecount.bind(this)}/>
                     <label>{record.price}</label>
                   </div>
               )}
@@ -86,7 +105,7 @@ class Home extends Component {
           {this.state.itemlist.map((record, index) =>
           <div className="flex-item">
             <div className="flex-img">
-              img
+              <img src={img1} height="200px"></img>
             </div>
             <div id="content-name">
               <label>
