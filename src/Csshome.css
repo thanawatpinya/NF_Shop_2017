@@ -14,6 +14,7 @@ body{
 }
 .flex-container{
   display: flex;
+  width: 100vw;
   justify-content: center;
   background-color: rgb(241,241,241);
 
