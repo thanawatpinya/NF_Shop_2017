@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './Csshome.css'
 import img1 from './img/1.jpeg'
-import { Glyphicon, Button } from 'react-bootstrap';
+import { Glyphicon, Button, Table } from 'react-bootstrap';
 import {DeleteAmount} from './DeleteAmount';
 let countid = 0;
 
@@ -95,7 +95,7 @@ class Home extends Component {
     let item2 = this.state.itemcart.filter(item => item.id === id)
     this.setState({itemcart: this.state.itemcart.filter(item=>item.id!==id),
                    toggleDelete: false,
-                     counter: this.state.counter -= item2[0].price})
+                   counter: this.state.counter -= item2[0].price})
   }
 
   handleDelete(bool){
@@ -149,24 +149,34 @@ class Home extends Component {
               <label id="cartfont" className="set-text-white">Cart</label>
             </div>
             <hr className="hrwidth"/>
-            <div id="cartlist">
-              <div id="in-cartlist">
-                <label id="name-item">Product Name</label>
-                <label>Amount</label>
-                <label>Price</label>
-              </div>
-              {this.state.itemcart.map((record, index) =>
-                  <div id="in-cartlist">
-                    <label id="name-item">{record.name}</label>
-                    <input className="setinput" id={index} type="number" min="1" value={record.count} onChange={this.handleChangecount.bind(this)}/>
-                    <label>{record.price}</label>
-                    <div><button onClick={this.handleShowModal.bind(this, true,record.name,record.count,record.id)} className="but-delete">
-                                 <Glyphicon glyph="trash"/>
-                         </button>
-                    </div>
-                  </div>
-              )}
-            </div>
+            <Table>
+              <thead>
+                <tr>
+                  <th className="cartlist">Product Name</th>
+                  <th className="cartlist">Amount</th>
+                  <th className="cartlist">Price</th>
+                  <th className="fixWidth" />
+                </tr>
+              </thead>
+              <tbody>
+                  {this.state.itemcart.map((record, index) =>
+                      <tr>
+                        <td className="content-style"><label>{record.name}</label></td>
+                        <td className="content-style">
+                          <input className="setinput"
+                                 id={index} type="number"
+                                 min="1" value={record.count}
+                                 onChange={this.handleChangecount.bind(this)}/></td>
+                        <td className="content-style"><label>{record.price}</label></td>
+                        <td className="content-style">
+                          <button onClick={this.handleShowModal.bind(this, true,record.name,record.count,record.id)}
+                                     className="but-delete">
+                                     <Glyphicon glyph="trash"/>
+                          </button></td>
+                        </tr>
+                  )}
+              </tbody>
+            </Table>
           </div>
           <div className="checkoutset">
             { this.state.toggleDelete ?

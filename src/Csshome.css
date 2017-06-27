@@ -7,28 +7,21 @@ body{
   position: sticky;
   background-color: rgb(24, 53, 68);
   position:relative;
-  /*border-right: 2px solid;
-  border-right-style: dashed;
-  border-right-color: rgb(254, 162, 77);
-  border-left-width:1px;*/
+  padding: 20px 0px;
+  justify-content: space-between;
 }
 .flex-container{
   display: flex;
   width: 100vw;
   justify-content: center;
   background-color: rgb(241,241,241);
-
 }
-#cartlist{
-  display: flex;
-  flex-direction:column;
-  height: 450px;
+.fixWidth{
+  width: 50px;
+}
+.cartlist{
   color: white;
   font-weight: bold;
-}
-#in-cartlist{
-  display: flex;
-  justify-content: space-around;
 }
 #name-item{
   width: 150px;
@@ -37,9 +30,6 @@ body{
   display: flex;
   flex-direction:column;
   justify-content: space-around;
-}
-#button{
-
 }
 .button {
   background-color: #4CAF50; /* Green */
@@ -51,7 +41,6 @@ body{
   display: inline-block;
   font-size: 16px;
   margin: 4px 2px;
-  -webkit-transition-duration: 0.2s; /* Safari */
   transition-duration: 0.2s;
   cursor: pointer;
 }
@@ -86,10 +75,8 @@ body{
 }
 
 .flex-wrap{
-  /*display: -ms-flexbox;*/
   display: flex;
-  /*-ms-flex-pack: center;*/
-  /*justify-content: center;*/
+  justify-content: space-around;
   flex-wrap: wrap;
   flex: 1;
   width: 1065px;
@@ -102,7 +89,6 @@ body{
   padding: 10px;
   height: 300px;
   margin: 5px;
-  margin-left: 15px;
   flex-basis: 325px;
   /*border: 1px solid;*/
   border-color: rgb(215, 213, 211);
@@ -125,8 +111,9 @@ body{
   width: 125px;
   float: right;
   margin-top: 5px;
-  background: rgb();
+  background: #f9986d;
   border: rgb(247, 247, 167);
+  transition-duration: 0.15s;
 }
 .but-cart:hover{
   background: rgb(243,111,54);
@@ -153,4 +140,10 @@ img {
 .but-delete{
   background-color: rgb(251, 64, 64);
   border: rgb(251, 64, 64);
+}
+Table{
+  width: 300px;
+}
+.content-style{
+  color: white;
 }
