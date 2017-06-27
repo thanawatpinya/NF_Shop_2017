@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import './Csshome.css'
 import { Glyphicon, Button } from 'react-bootstrap';
+import imgPro from './img/bank1.jpg';
+import {DeleteAmount} from './DeleteAmount';
 let countid = 0;
 
 class Home extends Component {
@@ -15,11 +17,17 @@ class Home extends Component {
       ],
       itemcart:[],
       counter: 0,
-      name: ""
+      name: "",
+      toggleDelete: false,
+      tempName:"",
+      tempCount: 0,
+      tempID: 0,
+      totalAmount: 0
     }
   }
 
   bundleAddToCart(e){
+    this.setState({totalAmount: this.state.totalAmount + this.state.itemlist[e.target.value].price})
     if(this.state.itemcart.find(a => a.name == this.state.itemlist[e.target.value].name)){
       for(let i = 0; i < this.state.itemcart.length; i++){
         if(this.state.itemcart[i].name == this.state.itemlist[e.target.value].name){
@@ -48,6 +56,25 @@ class Home extends Component {
       })
     }
   }
+  handleUpdateCart(id){
+    let item2 = this.state.itemcart.filter(item => item.id === id)
+    this.setState({itemcart: this.state.itemcart.filter(item=>item.id!==id),
+                   toggleDelete: false,
+                   totalAmount: this.state.totalAmount - item2[0].price})
+  }
+
+  handleDelete(bool){
+    this.setState({toggleDelete: bool})
+  }
+  handleSendData(name,count,id){
+    this.setState({tempName: name,
+                   tempCount: count,
+                   tempID: id})
+  }
+  handleShowModal(bool,name,count,id){
+    this.handleDelete(bool)
+    this.handleSendData(name,count,id)
+  }
 
   render() {
     return (
@@ -69,13 +96,25 @@ class Home extends Component {
                     <label id="name-item">{record.name}</label>
                     <label>{record.count}</label>
                     <label>{record.price}</label>
+                    <div><button onClick={this.handleShowModal.bind(this, true,record.name,record.count,record.id)} className="but-delete">
+                                 <Glyphicon glyph="trash"/>
+                         </button>
+                    </div>
                   </div>
               )}
             </div>
           </div>
           <div className="checkoutset">
+            { this.state.toggleDelete ?
+            <DeleteAmount handleDelete={this.handleDelete.bind(this)}
+                          handleUpdateCart={this.handleUpdateCart.bind(this)}
+                          amount={this.state.tempCount}
+                          name={this.state.tempName}
+                          id={this.state.tempID}/> :
+            null}
             <div id="total-content">
-              <label>Total Price : </label><label> {this.state.counter} </label>
+              <label>Total Price : </label>
+                <div>{this.state.totalAmount}</div>
             </div>
             <div id="button">
               <button className="button button-hover">Checkout</button>
@@ -86,7 +125,7 @@ class Home extends Component {
           {this.state.itemlist.map((record, index) =>
           <div className="flex-item">
             <div className="flex-img">
-              img
+              <img className="faded-egde" src=""/>
             </div>
             <div id="content-name">
               <label>

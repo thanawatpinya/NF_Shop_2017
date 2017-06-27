@@ -31,15 +31,12 @@ body{
   justify-content: space-around;
 }
 #name-item{
-  width: 150px;
+  width: 100px;
 }
 .sidebar-col{
   display: flex;
   flex-direction:column;
   justify-content: space-around;
-}
-#button{
-
 }
 .button {
   background-color: #4CAF50; /* Green */
@@ -115,11 +112,17 @@ body{
   box-shadow: 0 10px 10px 0 rgba(0,0,0,0.24),0 10px 50px 0 rgba(0,0,0,0.19);
 }
 .flex-img{
-  background: white;
-  height: 200px;
+  background-size: 200px;
   flex-basis: 325px;
   border-radius: 1em;
+  box-shadow: 0 0 8px 8px white inset;
 }
+#amount-input{
+  width: 40px;
+  height: 20px;
+  color: black;
+}
+
 .but-cart{
   color: white;
   height: 40px;
@@ -143,4 +146,8 @@ body{
   flex-direction: row;
   justify-content: space-between;
   margin-top: 10px;
+}
+.but-delete{
+  background-color: rgb(251, 64, 64);
+  border: rgb(251, 64, 64);
 }
