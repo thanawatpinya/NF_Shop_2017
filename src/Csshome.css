@@ -150,3 +150,7 @@ img {
     flex-basis: 325px;
     border-radius: 1em;
 }
+.but-delete{
+  background-color: rgb(251, 64, 64);
+  border: rgb(251, 64, 64);
+}
